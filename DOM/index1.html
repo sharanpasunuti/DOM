@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1>Finish Homework</h1>
+    <div class="container">
+        <p>1</p>
+        <p id="item2"></p>
+        <p>3</p>
+    
+    </div>
+    <script>
+         let newpara=document.createElement("p");
+         newpara.innerHTML="new task";
+         newpara.style.color="red";
+         newpara.style.fontSize="40px";
+         newpara.style.backgroundColor="lightgreen";
+
+
+        let containerDiv=document.querySelector(".container")
+        containerDiv.appendChild(newpara)
+
+        let item2=document.querySelector("#item2")
+        containerDiv.insertBefore(newpara,item2);
+    </script>
+</body>
+</html>

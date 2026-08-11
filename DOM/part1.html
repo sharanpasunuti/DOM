@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Task Solution</title>
+</head>
+<body>
+
+    <!-- Step 1 & 2: Parent container with 4 paragraph children -->
+    <div class="container">
+        <p class="box-1">First Item</p>
+        <p class="box-2">Second Item</p>
+        <p class="box-3">Third Item</p>
+        <p class="box-4">Fourth Item</p>
+    </div>
+
+    <script>
+        // STEP 3: Target the last child of the container
+        const container = document.querySelector(".container");
+        const lastChild = container.lastElementChild;
+
+        // STEP 4: Update content and render it as an <h1> element
+        lastChild.innerHTML = "<h1>Updated Text String</h1>";
+
+        // STEP 5: Print the parent element of this last child
+        console.log("Parent Element:", lastChild.parentElement);
+
+        // STEP 6: Print all child elements of the container
+        console.log("Children Elements:", container.children);
+    </script>
+
+</body>
+</html>

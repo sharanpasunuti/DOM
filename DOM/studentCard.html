@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student card</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <button id="btn">
+        Create Student Card
+    </button>
+    <script>
+        function add(){
+            console.log("hey Sharan , How can i help you?");
+        }
+        let btn=document.querySelector("#btn")
+        btn.addEventListener("click",add);
+        let containerDiv=document.querySelector("#container")
+
+        let card=document.createElement("div")
+        card.className="Student-card"
+        card.id="card1"
+       
+
+       document.body.append(card)
+
+       
+       
+//create h2 element
+    let heading=document.createElement("h2");
+    heading.innerText="Student Profile"
+    card.append(heading)
+
+    //Create a <p> element.
+
+        let para1=document.createElement("p")
+        para1.innerText=("Name:Sharanteja")
+        card.append(para1)
+
+          let para2=document.createElement("p")
+        para2.innerText=("Course:Full Stack Development")
+        card.append(para2)
+
+         let para3=document.createElement("p")
+        para3.innerText=("College:PIET")
+       card.append(para3)
+
+        let spn=document.createElement("span")
+        spn.innerText=("Active Student")
+        spn.className="badge"
+        card.appendChild(spn);
+
+        card.style.cssText+=" ;background-color:beige; padding : 10px; border: 2px dashed black; border-radius:10px; margin:20px; width:600px;"
+
+        spn.style.cssText+=" ;background-color:lightgreen; color:white; border-radius:5px; margin-top:10px; display:inline block";
+
+        containerDiv.appendChild(card)
+
+     console.log(card.classList);
+     
+    card.classList.add("premium")
+    console.log(card.classList);
+
+     card.classList.remove("premium")
+        console.log(card.classList); 
+
+        card.classList.replace("Student-card","developer-card")
+         console.log(card.classList);
+        console.log(card.classList.contains("developer-card"))
+
+        //toggle
+        card.classList.toggle("selected")
+        card.classList.toggle("selected")
+
+        //Attributes
+       console.log(card.getAttribute("Course"))
+       card.setAttribute("Course","Full Stack Development")
+        
+       console.log(card.getAttribute("Course"))
+       card.removeAttribute("Course")
+       console.log(card.hasAttribute("Course"))
+
+       //DOM TRAVERSAL...
+       console.log(card.parentElement);
+       console.log(card.children);
+       console.log(card.childNodes);
+       console.log(containerDiv.firstElementChild);
+       console.log(containerDiv.firstElementChild);
+       console.log(card.firstElementChild);
+       console.log(card.lastElementChild);
+      
+     //cloning 
+/*
+     let clone=card.cloneNode(true);
+     clone.id="card2";
+    
+    let paragraph = clone.querySelectorAll("p") 
+      paragraph[0].innerText="Name:Rahul";
+      paragraph[1].innerText="Course:Java Developer";
+      console.log(clone)
+      container.append(clone);
+*/
+
+//removing elements
+    card.removeChild(para3);
+  
+    //inserting elements
+    let newpara=document.createElement("p");
+    newpara.innerText="Batch:2028";
+    card.insertBefore(newpara,para2);
+
+
+    //final verification
+    let element=containerDiv.innerHTML;
+    let container=document.querySelector("#containerDiv");
+    let count=container.childNode.length;
+    console.log(count)
+    </script>
+
+</body>
+</html>

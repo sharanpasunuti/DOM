@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .main-container{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(196, 218, 250);
+
+        }
+        .container{
+            background-color: rgb(243, 242, 240);        
+            padding: 50px 70px;
+            border-radius: 15px;
+            box-shadow: 0px 2px 4px ;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+      
+        .items input{
+             padding: 5px;
+             border: 1px solid rgb(5, 157, 60);
+        }
+        .items button{
+            padding: 5px 15px;
+            background-color: rgb(99, 190, 246);
+            font-size: 15px;
+             color: black;
+             border: none;
+             border-radius: 5px;
+            font-weight: bold;
+        }
+        .items button:hover{
+            background-color: blue;
+            color: white;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+             <h1>Login page</h1>
+
+             <div class="items">
+                  <input type="text" placeholder="Enter Username or email">
+             </div>
+
+             <div class="items">
+                 <input type="text" placeholder="password">
+             </div>
+            
+             <div class="items">
+                 <button>Login</button>
+             </div>
+          
+           
+        </div>
+    </div>
+   
+</body>
+</html>

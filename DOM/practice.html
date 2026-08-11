@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+</head>
+<body>
+ <h1>DOM Manipulation</h1>
+ <p>using setAttribute and getAttribute</p>
+ <div id="box">
+    <li>1</li>
+    <li>2</li>
+ </div>
+ <script>
+
+let boxy = document.querySelector('#box');
+
+console.log(boxy.getAttribute("id"));
+boxy.setAttribute("id","main-panel");
+console.log(boxy.getAttribute("id"));
+
+
+ </script>
+   <!-- <script>
+        let containerDiv =document.querySelector(".container")
+        console.log(containerDiv.getAttribute("class"))
+        console.log(containerDiv.getAttribute("id"))
+        console.log(containerDiv.getAttribute("title"))
+
+        console.log(containerDiv.setAttribute("data-variable","priority-order"))
+
+   </script> -->
+      <!-- <h1>DOM Manipulation</h1>
+    <div class="list">
+
+    </div>
+    <div class="summary">
+        <div class="sum1"></div>
+        <div class="sum2"></div>
+    </div>
+    <div class="container">
+    <h1>Main heading</h1>
+    <p>This a the description of the website.</p> 
+   </div> -->
+    <!-- <script>
+        document.querySelector("h1").style.color="red";
+        let listDiv=document.querySelector(".list");
+        listDiv.style.cssText+="; background-color:lightgreen; width:50%; padding:10px"
+
+        let para=document.createElement("p");
+        para.innerText="iam learning DOM Manipulation";
+
+        para.className="paragraph"
+        para.id="paragraph"
+
+        listDiv.appendChild(para);
+
+        let sumDiv=document.querySelector(".summary")
+        sumDiv.classList.add("")
+        //console.dir(listDiv);
+        // let containerDiv=document.querySelector(".container");
+        // //  containerDiv.style.width="400px";
+        // //  containerDiv.style.height="400px";
+        // containerDiv.style.cssText+=";background-color:lightblue;width:600px; height:300px; padding:4px; border-radius:10px"
+    </script> -->
+</body>
+</html>

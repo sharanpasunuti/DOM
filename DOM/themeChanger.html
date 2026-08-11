@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       .container{
+        height: 100vh;
+        width: 100%;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+        .box-container{
+           /* / background-color:rgb(163, 184, 247) ; */
+            border: 1px solid;
+            padding: 20px 30px;
+            border-radius: 20px;          
+        }
+        .dark{
+            background-color:black;
+            color:white;
+        }
+        button{
+            background-color: rgb(252, 250, 250);
+            border: none;
+            border-radius: 50px;
+
+        }
+        button:hover{
+            color:white;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="container">
+        <div class="box-container">
+             <h1>Theme Changer</h1>
+             <p>click the button to change the theme</p>
+             <button id="btn">Toggle Theme</button>
+        </div>
+     </div>
+
+    <script>
+        function toggleTheme(){
+            let containerBox=document.querySelector(".box-container")
+            containerBox.classList.toggle("dark")
+          
+        }
+
+        let btn=document.querySelector("#btn")
+        btn.addEventListener("click",toggleTheme);
+    </script>
+</body>
+</html>

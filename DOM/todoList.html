@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List Builder</title>
+  <style>
+    /* Optional styling for a cleaner look */
+    button {
+      margin-left: 5px;
+    }
+    li {
+      margin-top: 5px;
+    }
+    .delete-btn {
+      margin-left: 8px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>To-Do List</h1>
+  <!-- Input and Control Buttons -->
+  <input type="text" id="todo-input" placeholder="Enter Task">
+  <button id="add-btn">Add</button>
+  <button id="duplicate-btn">Duplicate Last</button>
+  <button id="insert-top-btn">Insert at Top</button>
+
+  <!-- Empty To-Do List -->
+  <ul id="todo-list"></ul>
+
+  <script>
+    // 1. Select key DOM elements
+    const todoInput = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+    const addBtn = document.getElementById('add-btn');
+    const duplicateBtn = document.getElementById('duplicate-btn');
+    const insertTopBtn = document.getElementById('insert-top-btn');
+
+    // Helper function to create a new list item with a delete button
+    function createListItem(text) {
+      const li = document.createElement('li');
+      li.textContent = text;
+
+      // Create "X" delete button
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'X';
+      deleteBtn.className = 'delete-btn';
+
+      // Requirement 4: Delete list item using .remove()
+      deleteBtn.addEventListener('click', function () {
+        li.remove();
+      });
+
+      li.appendChild(deleteBtn);
+      return li;
+    }
+
+    // Requirement 2: Add task using appendChild
+    addBtn.addEventListener('click', function () {
+      const text = todoInput.value.trim();
+      if (text !== '') {
+        const newLi = createListItem(text);
+        todoList.appendChild(newLi);
+        todoInput.value = ''; // Clear input after adding
+      }
+    });
+
+    // Requirement 3: Duplicate last item using cloneNode(true)
+    duplicateBtn.addEventListener('click', function () {
+      const lastChild = todoList.lastElementChild;
+      if (lastChild) {
+        // cloneNode(true) clones the node and all attached children (including the delete button)
+        const clonedLi = lastChild.cloneNode(true);
+
+        // Re-attach delete event listener to cloned item's delete button
+        const deleteBtn = clonedLi.querySelector('.delete-btn');
+        deleteBtn.addEventListener('click', function () {
+          clonedLi.remove();
+        });
+
+        todoList.appendChild(clonedLi);
+      }
+    });
+
+    // Requirement 5: Insert Priority Task at top using insertBefore
+    insertTopBtn.addEventListener('click', function () {
+      const priorityLi = createListItem('Priority Task');
+      // Inserts before the first child, or appends if the list is currently empty
+      todoList.insertBefore(priorityLi, todoList.firstChild);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+</head>
+<body>
+    <h1>InnerText :- returns the text content of the element and all its children</h1>
+    <h2>InnerHTML :- returns the html contents in the elements</h2>
+    <div class="container">
+        <h3>Employee details:</h3> 
+        <ul>
+            <li>name</li>
+            <li>age</li>
+            <li>salary</li>
+            <li>role</li>
+        </ul>
+        <p>hey iam sharan</p>
+    </div>
+    <script>
+
+    // use loop for setting backgroundcolor bcoz document.querySelectorAll returns a list of elements 
+   // and for coloring each and every element we need to traverse through each element.
+
+                /*  let headings=document.querySelectorAll("h1");
+                    headings.forEach((heading)=>{
+                        heading.style.backgroundColor="lightgreen";
+                    })
+                
+                    console.log(headings);
+                    */
+    
+        let heading1=document.querySelector("h1");
+        heading1.style.backgroundColor="lightgreen";
+
+        let  heading2=document.querySelector("h2");
+        heading2.style.backgroundColor="yellow";
+
+        let h=document.querySelector("div");
+        console.dir(h);
+
+        // textContent: to return the content even if the element is hidden
+        let para=document.querySelector("p");
+        para.style.visibility="hidden";
+        console.log(para)
+        
+    </script>
+</body>
+</html>

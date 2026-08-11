@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna tasks</title>
+   
+</head>
+<body>
+    <h1>hello sharan</h1>
+   <div class="box">This is a div container
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+    </ul>
+   </div>
+    <script>
+        let btn=document.createElement("button")
+        btn.innerText="click here"
+        btn.style.cssText+="color:white;background-color:blue"
+        console.log(btn);
+        
+      let div=document.querySelector("div")
+      div.append(btn);
+
+
+      let newheading=document.createElement("h1")
+      newheading.innerHTML="<i> hii chintu speaking here </i>"
+      document.querySelector("body").prepend(newheading)
+
+      //newheading.remove();
+
+    div.style.cssText+="; background-color:silver;border:2px solid red; "
+
+
+    </script>
+</body>
+</html>

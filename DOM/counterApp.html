@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        
+        }
+        .main-container{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(242, 245, 244);
+        }
+        .container{
+            background-color: azure;
+            
+            /* width: 30%;
+            height: 60%; */
+            padding: 20px 30px;
+            border: 1px solid;
+            box-shadow: 3px 3px 20px 3px;
+        }
+        h1{
+                display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        h2 {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size: 80px;
+            line-height: 1;       /* Removes extra line height spacing around the text */
+            margin: 15px 0 25px; /* Tight, explicit spacing top and bottom */
+        }
+        .button{
+          
+            padding:10px 20px;
+            background-color: rgb(109, 107, 107);
+            border-radius:10px;
+            font-size: 15px; 
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;           /* Proper spacing between buttons */
+        }
+      
+        #id1{
+            background-color:green ;
+            color:white;
+           
+        }
+        #id1:hover{
+            background-color: rgb(45, 248, 45);
+            color:black;
+        }
+        #id2{
+            background-color:red;
+            color:white;
+        }
+          #id2:hover{
+            background-color: rgb(239, 78, 81);
+            color:black;
+        }
+        #id3{
+            background-color:rgb(134, 143, 236); 
+            color:white;
+        }
+          #id3:hover{
+            background-color: rgb(100, 134, 248);
+            color:black;
+        }
+        #id4{
+            background-color:rgb(16, 142, 131); 
+            color:white;
+        }
+          #id4:hover{
+            background-color: rgb(93, 236, 209);
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Counter App </h1>
+            <h2>0</h2>
+            <button class="button" id="id1">start</button>
+            <button class="button" id="id2">stop</button>
+            <button class="button" id="id3">Resume</button>
+            <button class="button" id="id4">Reset</button>
+        </div>
+    </div>
+
+    <script>
+       let heading=document.querySelector(".container");
+       let heading2 =document.querySelector("h2");
+
+        let count=0;
+        let clock=null;
+            function start() {
+              if (clock !== null) return;
+                clock = setInterval(() => {
+                count++;
+                heading2.innerText = count;
+              }, 1000);
+            }
+            function stop() {
+                clearInterval(clock);
+                clock = null;
+            }
+            function reset(){
+               stop();
+               count=0;
+               let heading2=document.querySelector("h2");
+               heading2.innerText=count;
+            }    
+
+            function resume() {
+               
+                start();
+            }
+
+     let startbtn=document.querySelector("#id1");
+     startbtn.addEventListener("click",start)
+
+     
+     let stopbtn=document.querySelector("#id2");
+     stopbtn.addEventListener("click",stop)
+
+     let resetbtn=document.querySelector("#id4");
+     resetbtn.addEventListener("click",reset)
+
+     let resumebtn=document.querySelector("#id3")
+     resumebtn.addEventListener("click",resume)
+
+    </script>
+</body>
+</html>

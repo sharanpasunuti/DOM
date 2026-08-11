@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        deletebtn{
+            padding: 10px 15px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <h1>TO-DO LIST</h1>
+   <input id="input" type="text" placeholder="type-text">
+   <button id="btn1">Add</button>
+   <button id="btn2">Duplicate</button>
+   <button id="btn3">InsertTop</button>
+  
+   <ul id="list"></ul>
+
+   <script>
+    const input=document.querySelector("#input")
+    const addTask=document.querySelector("#btn1")
+    const list=document.querySelector("#list")
+    let insertAtTop=document.querySelector("#btn3")
+    let duplicateBtn=document.querySelector("#btn2")
+
+    function createNewTask() {
+        let li=document.createElement("li")
+        li.innerHTML=input.value;
+
+        //todo: add delete functionality
+        let deletebtn=document.createElement("button")
+        deletebtn.innerHTML="x";
+        deletebtn.classList.add("deletebtn")
+
+        deletebtn.addEventListener("click", function(){
+            console.log("removed task")
+            deletebtn.parentElement.remove()
+        })
+
+        li.appendChild(deletebtn);
+        list.append(li);
+        input.value= "";
+    }
+    
+    addTask.addEventListener("click",createNewTask);
+    duplicateBtn.addEventListener("click", duplicateLast)
+
+   function duplicateLast(){
+      let lastTask=list.lastElementChild
+      let copyTask= lastTask.cloneNode(true)
+
+      let delete_btn=copy.querySelector("button")
+    
+      delete_btn.addEventListener("click", function(){
+        console.log("removed")
+        copyTask.remove()
+      })
+   
+   }
+
+
+   function insertAtTop(){
+      let li=document.querySelector("li")
+      li.innerHTML=input.value;
+
+      let deletebtn=document.createElement("button")
+      deletebtn.innerHTML="x"
+      deletebtn.classList.add("delete_btn")
+      
+      deletebtn.addEventListener("click", function(){
+        console.log("removed")
+        deletebtn.parentElement.remove()
+      })
+    
+    //    list.append(li);
+    //    input.value= "";
+
+   }
+   </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>createElement method</h1>
+   
+    <script>
+        let div=document.createElement("div")
+        div.classList.add("card")
+        
+        
+
+        const heading=document.createElement("h1")
+        heading.innerText="News bulletin"
+
+        const para1=document.createElement("p")
+        para1.innerText="Latest news from vadodara"
+        
+
+         const para2=document.createElement("p")
+        para2.innerText="Summary of the news goes here"
+
+        div.append(heading,para1,para2)
+
+       document.body.append(div)
+
+        div.style.cssText+="background-color:lightyellow; width=200px; padding:10px; border:2px solid orange; color:darkblue"
+
+        para1.setAttribute("title","newupdate1")
+        para2.setAttribute("title","newupdate2")
+
+        console.log(para1.getAttribute("title"))
+        console.log(para2.getAttribute("title"))
+       
+        para1.classList.add("newClass1")
+       
+        para2.classList.add("newClass2")
+        para2.setAttribute("data-priority","item2_is_top_priority")
+
+       let card=document.querySelector("div")
+       console.log(card.children)
+
+        
+
+
+       
+    </script>
+</body>
+</html>

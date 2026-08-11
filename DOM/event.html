@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+   <style>
+    .todo{
+        background-color: rgb(154, 154, 242);
+        color:white;
+        padding: 20px 10px;
+        margin-top: 5px;
+    }
+   </style>
+</head>
+<body>
+    <h1>Event Listener</h1>
+    <button id="btn">Enter</button>
+    <script>
+
+        function addTask(){
+              let task=prompt("Enter your task here:")  
+
+            let para=document.createElement("p")
+           
+            para.innerText=task  
+            para.classList.add("todo")
+            document.querySelector("body").append(para)  
+            console.log(task)
+
+        }
+        let button=document.querySelector("#btn")
+        button.addEventListener("click", addTask);
+    </script>
+</body>
+</html>

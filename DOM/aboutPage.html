@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable About Page</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;           
+        }
+        .main-container{
+        background-color: aliceblue;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+       .container{
+        background-color: white;
+        padding: 20px 30px;
+        border: 1px solid rgb(201, 228, 250);
+        border-radius: 10px;
+        max-width:max-content;
+        max-height: max-content;
+
+       }
+       .btns{
+        padding: 5px 20px;
+       }
+       p{
+        padding: 10px;
+       }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Editable About Page</h1>
+            <div class="minicontainer">
+                <h1>About Me</h1>
+                
+                <p>Iam learning DOM manipulation and building interactive web pages</p>
+                <button class="btns" id="btn1">Edit</button>
+                <button class="btns" id="btn2">Save</button>
+            </div>
+            
+        </div>    
+    </div>
+    <script>
+        function save() {
+           let para=document.querySelector("p")
+            para.contentEditable=false;
+          
+        }
+        function edit(){
+            let para=document.querySelector("p")
+            para.contentEditable=true;
+             para.focus();
+        }
+        let button1=document.querySelector("#btn1")
+        button1.addEventListener("click",edit)
+
+        let button2=document.querySelector("#btn2")
+        button2.addEventListener("click",save)
+    </script>
+</body>
+</html>

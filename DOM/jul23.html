@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(179, 251, 227);
+            height: 300px;
+            width: 300px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation</h1>
+    <h4>revising covered properties</h4>
+
+    <div class="container">
+        <p>description</p>
+        <p>summary</p>
+    </div>
+    <script>
+        //accessing the target element
+        let ele=document.querySelector("h1");
+        ele.innerText="Document Object Model Manipulation"
+        //ele.style.color="pink"
+        console.log(ele)
+
+        let contDiv=document.querySelector(".container")
+        contDiv.style.cssText+="background-color:white; border:5px; padding:10px width:500px"
+
+        contDiv.id="containerr"
+        contDiv.classList.add("newContainer","newContainer10")
+        console.log(contDiv.classList)
+
+        contDiv.classList.replace("newContainer","newContainer1");
+        contDiv.classList.remove("container","newContainer1")
+      
+        
+        console.log(contDiv.getAttribute("id"));
+        console.log(contDiv.getAttribute("class"));
+        console.log(contDiv.getAttribute("style"));
+
+        console.log(contDiv.setAttribute("title","contDiv"));
+        console.log(contDiv.setAttribute("data-var","sharan"));
+    </script>
+</body>
+</html>
